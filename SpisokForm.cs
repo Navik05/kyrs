@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace kyrs
 {
-    public partial class Form1 : Form
+    public partial class SpisokForm : Form
     {
-        public Form1()
+        public SpisokForm()
         {
             InitializeComponent();
+        }
+
+        private void SpisokForm_Activated(object sender, EventArgs e)
+        {
+
         }
     }
 }

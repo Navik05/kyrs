@@ -9,7 +9,7 @@ namespace kyrs
 {
     internal class DB
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=auditorium");
+        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=spisok");
 
         public void openConnection()
         {
