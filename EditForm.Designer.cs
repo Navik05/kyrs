@@ -96,6 +96,7 @@
             this.button_edit_exit.TabIndex = 11;
             this.button_edit_exit.Text = "Выход";
             this.button_edit_exit.UseVisualStyleBackColor = true;
+            this.button_edit_exit.Click += new System.EventHandler(this.button_edit_exit_Click);
             // 
             // button_edit_apply
             // 
@@ -380,6 +381,7 @@
             this.radioButton_edit_delete.TabStop = true;
             this.radioButton_edit_delete.Text = "Удаление строки";
             this.radioButton_edit_delete.UseVisualStyleBackColor = true;
+            this.radioButton_edit_delete.CheckedChanged += new System.EventHandler(this.radioButton_edit_delete_CheckedChanged);
             // 
             // radioButton_edit_create
             // 
@@ -391,7 +393,7 @@
             this.radioButton_edit_create.TabIndex = 1;
             this.radioButton_edit_create.TabStop = true;
             this.radioButton_edit_create.Text = "Добавление строки";
-            this.radioButton_edit_create.UseVisualStyleBackColor = true;
+            this.radioButton_edit_create.UseVisualStyleBackColor = true;    
             // 
             // EditForm
             // 
@@ -407,6 +409,8 @@
             this.Controls.Add(this.groupBox_edit_mode);
             this.Name = "EditForm";
             this.Text = "EditForm";
+            this.Activated += new System.EventHandler(this.EditForm_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditForm_FormClosed);
             this.groupBox_edit_line.ResumeLayout(false);
             this.groupBox_edit_line.PerformLayout();
             this.groupBox_edit_data.ResumeLayout(false);

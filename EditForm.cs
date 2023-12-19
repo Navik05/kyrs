@@ -17,9 +17,90 @@ namespace kyrs
         {
             InitializeComponent();
         }
-
+        //
+        // Закрытие формы
+        //
+        private void EditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+        //
+        // Кнопка выход
+        //
+        private void button_edit_exit_Click(object sender, EventArgs e)
+        {
+            Hide();
+            SpisokForm spisokForm = new SpisokForm();
+            spisokForm.Show();
+        }
+        //
+        // Активация формы
+        //
+        private void EditForm_Activated(object sender, EventArgs e)
+        {
+            radioButton_edit_mul.Checked = true;
+            radioButton_edit_mel.Checked = true;
+            maskedTextBox_edit_line.Enabled = false;
+            button_edit_show.Enabled = false;
+        }
+        //
+        // Выбор режима работы
+        //
+        private void radioButton_edit_delete_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_edit_delete.Checked == true)
+            {
+                maskedTextBox_edit_line.Enabled = true;
+                groupBox_edit_data.Enabled = false;
+                button_edit_show.Enabled = true;
+            }
+            else
+            {
+                maskedTextBox_edit_line.Enabled = false;
+                groupBox_edit_data.Enabled = true;
+                button_edit_show.Enabled = false;
+            }
+        }
+        //
+        // Кнопка применить
+        //
         private void button_edit_apply_Click(object sender, EventArgs e)
         {
+            Int32 mode;
+            //Режим работы
+            if (radioButton_edit_create.Checked == true) mode = 1;
+            else if (radioButton_edit_delete.Checked == true) mode = 2;
+            else mode = 3;
+
+            //Проверки на полный ввод данных
+            if (comboBox_edit_corpus.SelectedIndex == -1)
+            {
+                textBox_edit_error.Text = "Корпус не выбран";
+                return;
+            }
+
+            if (maskedTextBox_edit_cabinet.Text == "")
+            {
+                textBox_edit_error.Text = "Номер аудитории не задан";
+                return;
+            }
+
+            if (maskedTextBox_edit_square.Text == "")
+            {
+                textBox_edit_error.Text = "Площадь не задана";
+                return;
+            }
+
+            if (maskedTextBox_edit_size.Text == "")
+            {
+                textBox_edit_error.Text = "Количество мест не задано";
+                return;
+            }
+
+            if (isAuditoriumExists() == true)
+                return;
+
+            //Занесение данных в бд
             Int32 type, board;
             if (radioButton_edit_mul.Checked == true) type = 1;
             else type = 2;
@@ -28,7 +109,7 @@ namespace kyrs
             else board = 2;
 
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `auditorium` (`corpus`, `cabinet`, `square`, `size`, `type`, `board`) VALUES ('@corpus', '@cabinet', '@square', '@size', '@type', '@board')", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `auditorium` (`corpus`, `cabinet`, `square`, `size`, `type`, `board`) VALUES (@corpus, @cabinet, @square, @size, @type, @board)", db.getConnection());
             command.Parameters.Add("@corpus", MySqlDbType.VarChar).Value = comboBox_edit_corpus.Text;
             command.Parameters.Add("@cabinet", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_cabinet.Text);
             command.Parameters.Add("@square", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_square.Text);
@@ -52,6 +133,40 @@ namespace kyrs
             }
 
             db.closeConnection();
+        }
+
+        //Проверка на совпадения строки
+        public Boolean isAuditoriumExists()
+        {
+            Int32 type, board;
+            if (radioButton_edit_mul.Checked == true) type = 1;
+            else type = 2;
+
+            if (radioButton_edit_mel.Checked == true) board = 1;
+            else board = 2;
+
+            DB db = new DB();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `auditorium` WHERE `corpus` = @corpus AND `cabinet` = @cabinet AND `square` = @square AND `size` = @size AND `type` = @type AND `board` = @board", db.getConnection());
+            command.Parameters.Add("@corpus",MySqlDbType.VarChar).Value = comboBox_edit_corpus.Text;
+            command.Parameters.Add("@cabinet", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_cabinet.Text);
+            command.Parameters.Add("@square", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_square.Text);
+            command.Parameters.Add("@size", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_size.Text);
+            command.Parameters.Add("@type", MySqlDbType.Int32).Value = type;
+            command.Parameters.Add("board", MySqlDbType.Int32).Value = board;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                textBox_edit_error.Text = "Такая строка уже существует";
+                return true;
+            }
+
+            else 
+                return false;
         }
     }
 }
