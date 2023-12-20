@@ -144,6 +144,7 @@
             this.ToolStripMenuItem_spisok_search.Name = "ToolStripMenuItem_spisok_search";
             this.ToolStripMenuItem_spisok_search.Size = new System.Drawing.Size(73, 24);
             this.ToolStripMenuItem_spisok_search.Text = "Запрос";
+            this.ToolStripMenuItem_spisok_search.Click += new System.EventHandler(this.ToolStripMenuItem_spisok_search_Click);
             // 
             // SpisokForm
             // 

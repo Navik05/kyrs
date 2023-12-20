@@ -37,6 +37,15 @@ namespace kyrs
             editForm.Show();
         }
         //
+        // Кнопка запроса
+        //
+        private void ToolStripMenuItem_spisok_search_Click(object sender, EventArgs e)
+        {
+            Hide();
+            SeekForm seekForm = new SeekForm();
+            seekForm.Show();
+        }
+        //
         // Активация формы
         //
         private void SpisokForm_Activated(object sender, EventArgs e)
@@ -59,7 +68,6 @@ namespace kyrs
                     dataGridView_spisok.Rows[i].Cells[j].Value = reader[j].ToString();
                 }
             }
-
             reader.Close();
             db.closeConnection();   
         }

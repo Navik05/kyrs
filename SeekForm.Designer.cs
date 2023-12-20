@@ -32,6 +32,13 @@
             this.button_seek_exit = new System.Windows.Forms.Button();
             this.textBox_seek_error = new System.Windows.Forms.TextBox();
             this.dataGridView_seek = new System.Windows.Forms.DataGridView();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_corpus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_square = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_board = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox_seek_size = new System.Windows.Forms.GroupBox();
             this.maskedTextBox_seek_size = new System.Windows.Forms.MaskedTextBox();
             this.label_size_more = new System.Windows.Forms.Label();
@@ -67,13 +74,6 @@
             this.label_seek_coincidence = new System.Windows.Forms.Label();
             this.label_seek_list = new System.Windows.Forms.Label();
             this.textBox_seek_list = new System.Windows.Forms.TextBox();
-            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_corpus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_square = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column_board = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seek)).BeginInit();
             this.groupBox_seek_size.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar_seek_size)).BeginInit();
@@ -96,6 +96,7 @@
             this.button_seek_apply.TabIndex = 21;
             this.button_seek_apply.Text = "Применить";
             this.button_seek_apply.UseVisualStyleBackColor = true;
+            this.button_seek_apply.Click += new System.EventHandler(this.button_seek_apply_Click);
             // 
             // button_seek_exit
             // 
@@ -107,6 +108,7 @@
             this.button_seek_exit.TabIndex = 20;
             this.button_seek_exit.Text = "Выход";
             this.button_seek_exit.UseVisualStyleBackColor = true;
+            this.button_seek_exit.Click += new System.EventHandler(this.button_seek_exit_Click);
             // 
             // textBox_seek_error
             // 
@@ -141,6 +143,62 @@
             this.dataGridView_seek.RowTemplate.Height = 24;
             this.dataGridView_seek.Size = new System.Drawing.Size(860, 181);
             this.dataGridView_seek.TabIndex = 18;
+            // 
+            // Column_id
+            // 
+            this.Column_id.HeaderText = "№";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.ReadOnly = true;
+            this.Column_id.Width = 25;
+            // 
+            // Column_corpus
+            // 
+            this.Column_corpus.HeaderText = "Корпус";
+            this.Column_corpus.MinimumWidth = 6;
+            this.Column_corpus.Name = "Column_corpus";
+            this.Column_corpus.ReadOnly = true;
+            this.Column_corpus.Width = 125;
+            // 
+            // Column_cabinet
+            // 
+            this.Column_cabinet.HeaderText = "Номер аудитории";
+            this.Column_cabinet.MinimumWidth = 6;
+            this.Column_cabinet.Name = "Column_cabinet";
+            this.Column_cabinet.ReadOnly = true;
+            this.Column_cabinet.Width = 125;
+            // 
+            // Column_square
+            // 
+            this.Column_square.HeaderText = "Площадь";
+            this.Column_square.MinimumWidth = 6;
+            this.Column_square.Name = "Column_square";
+            this.Column_square.ReadOnly = true;
+            this.Column_square.Width = 125;
+            // 
+            // Column_size
+            // 
+            this.Column_size.HeaderText = "Количество мест";
+            this.Column_size.MinimumWidth = 6;
+            this.Column_size.Name = "Column_size";
+            this.Column_size.ReadOnly = true;
+            this.Column_size.Width = 125;
+            // 
+            // Column_type
+            // 
+            this.Column_type.HeaderText = "Тип";
+            this.Column_type.MinimumWidth = 6;
+            this.Column_type.Name = "Column_type";
+            this.Column_type.ReadOnly = true;
+            this.Column_type.Width = 125;
+            // 
+            // Column_board
+            // 
+            this.Column_board.HeaderText = "Характеристика доски";
+            this.Column_board.MinimumWidth = 6;
+            this.Column_board.Name = "Column_board";
+            this.Column_board.ReadOnly = true;
+            this.Column_board.Width = 125;
             // 
             // groupBox_seek_size
             // 
@@ -425,6 +483,7 @@
             this.checkBox_seek_size.TabIndex = 3;
             this.checkBox_seek_size.Text = "Вместимость";
             this.checkBox_seek_size.UseVisualStyleBackColor = true;
+            this.checkBox_seek_size.CheckedChanged += new System.EventHandler(this.checkBox_seek_corpus_CheckedChanged);
             // 
             // checkBox_seek_board
             // 
@@ -436,6 +495,7 @@
             this.checkBox_seek_board.TabIndex = 5;
             this.checkBox_seek_board.Text = "Характеристику доски";
             this.checkBox_seek_board.UseVisualStyleBackColor = true;
+            this.checkBox_seek_board.CheckedChanged += new System.EventHandler(this.checkBox_seek_corpus_CheckedChanged);
             // 
             // checkBox_seek_cabinet
             // 
@@ -447,6 +507,7 @@
             this.checkBox_seek_cabinet.TabIndex = 1;
             this.checkBox_seek_cabinet.Text = "Номер аудитории";
             this.checkBox_seek_cabinet.UseVisualStyleBackColor = true;
+            this.checkBox_seek_cabinet.CheckedChanged += new System.EventHandler(this.checkBox_seek_corpus_CheckedChanged);
             // 
             // checkBox_seek_type
             // 
@@ -458,6 +519,7 @@
             this.checkBox_seek_type.TabIndex = 4;
             this.checkBox_seek_type.Text = "Тип аудитории";
             this.checkBox_seek_type.UseVisualStyleBackColor = true;
+            this.checkBox_seek_type.CheckedChanged += new System.EventHandler(this.checkBox_seek_corpus_CheckedChanged);
             // 
             // checkBox_seek_corpus
             // 
@@ -469,6 +531,7 @@
             this.checkBox_seek_corpus.TabIndex = 0;
             this.checkBox_seek_corpus.Text = "Корпус";
             this.checkBox_seek_corpus.UseVisualStyleBackColor = true;
+            this.checkBox_seek_corpus.CheckedChanged += new System.EventHandler(this.checkBox_seek_corpus_CheckedChanged);
             // 
             // checkBox_seek_square
             // 
@@ -480,6 +543,7 @@
             this.checkBox_seek_square.TabIndex = 2;
             this.checkBox_seek_square.Text = "Площадь";
             this.checkBox_seek_square.UseVisualStyleBackColor = true;
+            this.checkBox_seek_square.CheckedChanged += new System.EventHandler(this.checkBox_seek_corpus_CheckedChanged);
             // 
             // groupBox_seek_line
             // 
@@ -529,62 +593,6 @@
             this.textBox_seek_list.Size = new System.Drawing.Size(46, 22);
             this.textBox_seek_list.TabIndex = 0;
             // 
-            // Column_id
-            // 
-            this.Column_id.HeaderText = "№";
-            this.Column_id.MinimumWidth = 6;
-            this.Column_id.Name = "Column_id";
-            this.Column_id.ReadOnly = true;
-            this.Column_id.Width = 25;
-            // 
-            // Column_corpus
-            // 
-            this.Column_corpus.HeaderText = "Корпус";
-            this.Column_corpus.MinimumWidth = 6;
-            this.Column_corpus.Name = "Column_corpus";
-            this.Column_corpus.ReadOnly = true;
-            this.Column_corpus.Width = 125;
-            // 
-            // Column_cabinet
-            // 
-            this.Column_cabinet.HeaderText = "Номер аудитории";
-            this.Column_cabinet.MinimumWidth = 6;
-            this.Column_cabinet.Name = "Column_cabinet";
-            this.Column_cabinet.ReadOnly = true;
-            this.Column_cabinet.Width = 125;
-            // 
-            // Column_square
-            // 
-            this.Column_square.HeaderText = "Площадь";
-            this.Column_square.MinimumWidth = 6;
-            this.Column_square.Name = "Column_square";
-            this.Column_square.ReadOnly = true;
-            this.Column_square.Width = 125;
-            // 
-            // Column_size
-            // 
-            this.Column_size.HeaderText = "Количество мест";
-            this.Column_size.MinimumWidth = 6;
-            this.Column_size.Name = "Column_size";
-            this.Column_size.ReadOnly = true;
-            this.Column_size.Width = 125;
-            // 
-            // Column_type
-            // 
-            this.Column_type.HeaderText = "Тип";
-            this.Column_type.MinimumWidth = 6;
-            this.Column_type.Name = "Column_type";
-            this.Column_type.ReadOnly = true;
-            this.Column_type.Width = 125;
-            // 
-            // Column_board
-            // 
-            this.Column_board.HeaderText = "Характеристика доски";
-            this.Column_board.MinimumWidth = 6;
-            this.Column_board.Name = "Column_board";
-            this.Column_board.ReadOnly = true;
-            this.Column_board.Width = 125;
-            // 
             // SeekForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -601,6 +609,8 @@
             this.Controls.Add(this.groupBox_seek_line);
             this.Name = "SeekForm";
             this.Text = "SeekForm";
+            this.Activated += new System.EventHandler(this.SeekForm_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SeekForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seek)).EndInit();
             this.groupBox_seek_size.ResumeLayout(false);
             this.groupBox_seek_size.PerformLayout();
