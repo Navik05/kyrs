@@ -369,6 +369,7 @@
             this.radioButton_edit_change.TabStop = true;
             this.radioButton_edit_change.Text = "Редактирование строки";
             this.radioButton_edit_change.UseVisualStyleBackColor = true;
+            this.radioButton_edit_change.CheckedChanged += new System.EventHandler(this.radioButton_edit_change_CheckedChanged);
             // 
             // radioButton_edit_delete
             // 
@@ -393,7 +394,8 @@
             this.radioButton_edit_create.TabIndex = 1;
             this.radioButton_edit_create.TabStop = true;
             this.radioButton_edit_create.Text = "Добавление строки";
-            this.radioButton_edit_create.UseVisualStyleBackColor = true;    
+            this.radioButton_edit_create.UseVisualStyleBackColor = true;
+            this.radioButton_edit_create.CheckedChanged += new System.EventHandler(this.radioButton_edit_create_CheckedChanged);
             // 
             // EditForm
             // 

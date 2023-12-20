@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView_spisok = new System.Windows.Forms.DataGridView();
-            this.Column_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_corpus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_cabinet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_square = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,8 +39,6 @@
             this.menuStrip_spisok = new System.Windows.Forms.MenuStrip();
             this.ToolStripMenuItem_spisok_edit = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_spisok_search = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_spisok_game = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_spisok_main = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_spisok)).BeginInit();
             this.menuStrip_spisok.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +49,7 @@
             this.dataGridView_spisok.AllowUserToDeleteRows = false;
             this.dataGridView_spisok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_spisok.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column_num,
+            this.Column_id,
             this.Column_corpus,
             this.Column_cabinet,
             this.Column_square,
@@ -67,13 +65,13 @@
             this.dataGridView_spisok.Size = new System.Drawing.Size(1010, 514);
             this.dataGridView_spisok.TabIndex = 2;
             // 
-            // Column_num
+            // Column_id
             // 
-            this.Column_num.HeaderText = "№";
-            this.Column_num.MinimumWidth = 6;
-            this.Column_num.Name = "Column_num";
-            this.Column_num.ReadOnly = true;
-            this.Column_num.Width = 25;
+            this.Column_id.HeaderText = "№";
+            this.Column_id.MinimumWidth = 6;
+            this.Column_id.Name = "Column_id";
+            this.Column_id.ReadOnly = true;
+            this.Column_id.Width = 25;
             // 
             // Column_corpus
             // 
@@ -128,9 +126,7 @@
             this.menuStrip_spisok.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip_spisok.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_spisok_edit,
-            this.ToolStripMenuItem_spisok_search,
-            this.ToolStripMenuItem_spisok_game,
-            this.ToolStripMenuItem_spisok_main});
+            this.ToolStripMenuItem_spisok_search});
             this.menuStrip_spisok.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_spisok.Name = "menuStrip_spisok";
             this.menuStrip_spisok.Size = new System.Drawing.Size(1012, 28);
@@ -139,26 +135,15 @@
             // ToolStripMenuItem_spisok_edit
             // 
             this.ToolStripMenuItem_spisok_edit.Name = "ToolStripMenuItem_spisok_edit";
-            this.ToolStripMenuItem_spisok_edit.Size = new System.Drawing.Size(188, 24);
-            this.ToolStripMenuItem_spisok_edit.Text = "Редактирование списка";
+            this.ToolStripMenuItem_spisok_edit.Size = new System.Drawing.Size(137, 24);
+            this.ToolStripMenuItem_spisok_edit.Text = "Редактирование";
+            this.ToolStripMenuItem_spisok_edit.Click += new System.EventHandler(this.ToolStripMenuItem_spisok_edit_Click);
             // 
             // ToolStripMenuItem_spisok_search
             // 
             this.ToolStripMenuItem_spisok_search.Name = "ToolStripMenuItem_spisok_search";
             this.ToolStripMenuItem_spisok_search.Size = new System.Drawing.Size(73, 24);
             this.ToolStripMenuItem_spisok_search.Text = "Запрос";
-            // 
-            // ToolStripMenuItem_spisok_game
-            // 
-            this.ToolStripMenuItem_spisok_game.Name = "ToolStripMenuItem_spisok_game";
-            this.ToolStripMenuItem_spisok_game.Size = new System.Drawing.Size(176, 24);
-            this.ToolStripMenuItem_spisok_game.Text = "Игра \"Города России\"";
-            // 
-            // ToolStripMenuItem_spisok_main
-            // 
-            this.ToolStripMenuItem_spisok_main.Name = "ToolStripMenuItem_spisok_main";
-            this.ToolStripMenuItem_spisok_main.Size = new System.Drawing.Size(183, 24);
-            this.ToolStripMenuItem_spisok_main.Text = "Выход в главное меню";
             // 
             // SpisokForm
             // 
@@ -170,6 +155,7 @@
             this.Name = "SpisokForm";
             this.Text = "Аудиторный фонд";
             this.Activated += new System.EventHandler(this.SpisokForm_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SpisokForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_spisok)).EndInit();
             this.menuStrip_spisok.ResumeLayout(false);
             this.menuStrip_spisok.PerformLayout();
@@ -181,17 +167,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView_spisok;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column_num;
+        private System.Windows.Forms.MenuStrip menuStrip_spisok;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_spisok_edit;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_spisok_search;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_corpus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_cabinet;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_square;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_size;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_board;
-        private System.Windows.Forms.MenuStrip menuStrip_spisok;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_spisok_edit;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_spisok_search;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_spisok_game;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_spisok_main;
     }
 }

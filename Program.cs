@@ -17,7 +17,7 @@ namespace kyrs
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EditForm());
+            Application.Run(new SpisokForm());
         }
     }
 }

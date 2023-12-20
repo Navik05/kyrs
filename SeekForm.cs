@@ -8,14 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace kyrs
 {
-    public partial class MainForm : Form
+    public partial class SeekForm : Form
     {
-
-        public MainForm()
+        public SeekForm()
         {
             InitializeComponent();
         }
