@@ -132,6 +132,7 @@ namespace kyrs
             "AND (`type` = @type OR @type IS NULL)" +
             "AND (`board` = @board OR @board IS NULL)", db.getConnection());
             command.Parameters.Add("@corpus", MySqlDbType.VarChar).Value = parameters[0];
+            //command.Parameters.Add("@=", MySqlDbType.VarChar).Value = "=";
             command.Parameters.Add("@cabinet", MySqlDbType.VarChar).Value = parameters[1];
             command.Parameters.Add("@square", MySqlDbType.VarChar).Value = parameters[2];
             command.Parameters.Add("@size", MySqlDbType.VarChar).Value = parameters[3];

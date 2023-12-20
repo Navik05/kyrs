@@ -39,15 +39,7 @@
             this.Column_size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column_board = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox_seek_size = new System.Windows.Forms.GroupBox();
             this.maskedTextBox_seek_size = new System.Windows.Forms.MaskedTextBox();
-            this.label_size_more = new System.Windows.Forms.Label();
-            this.label_size_less = new System.Windows.Forms.Label();
-            this.trackBar_seek_size = new System.Windows.Forms.TrackBar();
-            this.groupBox_seek_square = new System.Windows.Forms.GroupBox();
-            this.label_square_more = new System.Windows.Forms.Label();
-            this.label_square_less = new System.Windows.Forms.Label();
-            this.trackBar_seek_square = new System.Windows.Forms.TrackBar();
             this.maskedTextBox_seek_square = new System.Windows.Forms.MaskedTextBox();
             this.groupBox_seek_exact = new System.Windows.Forms.GroupBox();
             this.panel_seek_type = new System.Windows.Forms.Panel();
@@ -72,25 +64,23 @@
             this.groupBox_seek_line = new System.Windows.Forms.GroupBox();
             this.textBox_seek_coincidence = new System.Windows.Forms.TextBox();
             this.label_seek_coincidence = new System.Windows.Forms.Label();
-            this.label_seek_list = new System.Windows.Forms.Label();
-            this.textBox_seek_list = new System.Windows.Forms.TextBox();
+            this.groupBox_seek_size = new System.Windows.Forms.GroupBox();
+            this.groupBox_seek_square = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seek)).BeginInit();
-            this.groupBox_seek_size.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_seek_size)).BeginInit();
-            this.groupBox_seek_square.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_seek_square)).BeginInit();
             this.groupBox_seek_exact.SuspendLayout();
             this.panel_seek_type.SuspendLayout();
             this.panel_seek_board.SuspendLayout();
             this.groupBox_seek_choice.SuspendLayout();
             this.groupBox_seek_line.SuspendLayout();
+            this.groupBox_seek_size.SuspendLayout();
+            this.groupBox_seek_square.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_seek_apply
             // 
             this.button_seek_apply.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_seek_apply.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_seek_apply.Location = new System.Drawing.Point(491, 215);
+            this.button_seek_apply.Location = new System.Drawing.Point(561, 211);
             this.button_seek_apply.Name = "button_seek_apply";
             this.button_seek_apply.Size = new System.Drawing.Size(143, 48);
             this.button_seek_apply.TabIndex = 21;
@@ -102,7 +92,7 @@
             // 
             this.button_seek_exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_seek_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_seek_exit.Location = new System.Drawing.Point(676, 215);
+            this.button_seek_exit.Location = new System.Drawing.Point(561, 294);
             this.button_seek_exit.Name = "button_seek_exit";
             this.button_seek_exit.Size = new System.Drawing.Size(143, 48);
             this.button_seek_exit.TabIndex = 20;
@@ -200,22 +190,9 @@
             this.Column_board.ReadOnly = true;
             this.Column_board.Width = 125;
             // 
-            // groupBox_seek_size
-            // 
-            this.groupBox_seek_size.Controls.Add(this.maskedTextBox_seek_size);
-            this.groupBox_seek_size.Controls.Add(this.label_size_more);
-            this.groupBox_seek_size.Controls.Add(this.label_size_less);
-            this.groupBox_seek_size.Controls.Add(this.trackBar_seek_size);
-            this.groupBox_seek_size.Location = new System.Drawing.Point(328, 304);
-            this.groupBox_seek_size.Name = "groupBox_seek_size";
-            this.groupBox_seek_size.Size = new System.Drawing.Size(306, 78);
-            this.groupBox_seek_size.TabIndex = 17;
-            this.groupBox_seek_size.TabStop = false;
-            this.groupBox_seek_size.Text = "Вместимость";
-            // 
             // maskedTextBox_seek_size
             // 
-            this.maskedTextBox_seek_size.Location = new System.Drawing.Point(6, 31);
+            this.maskedTextBox_seek_size.Location = new System.Drawing.Point(58, 31);
             this.maskedTextBox_seek_size.Mask = "000";
             this.maskedTextBox_seek_size.Name = "maskedTextBox_seek_size";
             this.maskedTextBox_seek_size.Size = new System.Drawing.Size(80, 22);
@@ -223,84 +200,9 @@
             this.maskedTextBox_seek_size.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.maskedTextBox_seek_size.ValidatingType = typeof(int);
             // 
-            // label_size_more
-            // 
-            this.label_size_more.AutoSize = true;
-            this.label_size_more.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_size_more.Location = new System.Drawing.Point(246, 54);
-            this.label_size_more.Name = "label_size_more";
-            this.label_size_more.Size = new System.Drawing.Size(51, 15);
-            this.label_size_more.TabIndex = 9;
-            this.label_size_more.Text = "больше";
-            // 
-            // label_size_less
-            // 
-            this.label_size_less.AutoSize = true;
-            this.label_size_less.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_size_less.Location = new System.Drawing.Point(104, 54);
-            this.label_size_less.Name = "label_size_less";
-            this.label_size_less.Size = new System.Drawing.Size(53, 15);
-            this.label_size_less.TabIndex = 8;
-            this.label_size_less.Text = "меньше";
-            // 
-            // trackBar_seek_size
-            // 
-            this.trackBar_seek_size.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar_seek_size.LargeChange = 1;
-            this.trackBar_seek_size.Location = new System.Drawing.Point(107, 16);
-            this.trackBar_seek_size.Maximum = 2;
-            this.trackBar_seek_size.Name = "trackBar_seek_size";
-            this.trackBar_seek_size.Size = new System.Drawing.Size(174, 56);
-            this.trackBar_seek_size.TabIndex = 8;
-            this.trackBar_seek_size.Value = 1;
-            // 
-            // groupBox_seek_square
-            // 
-            this.groupBox_seek_square.Controls.Add(this.label_square_more);
-            this.groupBox_seek_square.Controls.Add(this.label_square_less);
-            this.groupBox_seek_square.Controls.Add(this.trackBar_seek_square);
-            this.groupBox_seek_square.Controls.Add(this.maskedTextBox_seek_square);
-            this.groupBox_seek_square.Location = new System.Drawing.Point(12, 304);
-            this.groupBox_seek_square.Name = "groupBox_seek_square";
-            this.groupBox_seek_square.Size = new System.Drawing.Size(306, 78);
-            this.groupBox_seek_square.TabIndex = 16;
-            this.groupBox_seek_square.TabStop = false;
-            this.groupBox_seek_square.Text = "Площадь";
-            // 
-            // label_square_more
-            // 
-            this.label_square_more.AutoSize = true;
-            this.label_square_more.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_square_more.Location = new System.Drawing.Point(246, 54);
-            this.label_square_more.Name = "label_square_more";
-            this.label_square_more.Size = new System.Drawing.Size(51, 15);
-            this.label_square_more.TabIndex = 9;
-            this.label_square_more.Text = "больше";
-            // 
-            // label_square_less
-            // 
-            this.label_square_less.AutoSize = true;
-            this.label_square_less.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_square_less.Location = new System.Drawing.Point(104, 54);
-            this.label_square_less.Name = "label_square_less";
-            this.label_square_less.Size = new System.Drawing.Size(53, 15);
-            this.label_square_less.TabIndex = 8;
-            this.label_square_less.Text = "меньше";
-            // 
-            // trackBar_seek_square
-            // 
-            this.trackBar_seek_square.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar_seek_square.LargeChange = 1;
-            this.trackBar_seek_square.Location = new System.Drawing.Point(107, 16);
-            this.trackBar_seek_square.Maximum = 2;
-            this.trackBar_seek_square.Name = "trackBar_seek_square";
-            this.trackBar_seek_square.Size = new System.Drawing.Size(174, 56);
-            this.trackBar_seek_square.TabIndex = 8;
-            this.trackBar_seek_square.Value = 1;
-            // 
             // maskedTextBox_seek_square
             // 
-            this.maskedTextBox_seek_square.Location = new System.Drawing.Point(6, 27);
+            this.maskedTextBox_seek_square.Location = new System.Drawing.Point(44, 31);
             this.maskedTextBox_seek_square.Mask = "000";
             this.maskedTextBox_seek_square.Name = "maskedTextBox_seek_square";
             this.maskedTextBox_seek_square.Size = new System.Drawing.Size(80, 22);
@@ -549,8 +451,6 @@
             // 
             this.groupBox_seek_line.Controls.Add(this.textBox_seek_coincidence);
             this.groupBox_seek_line.Controls.Add(this.label_seek_coincidence);
-            this.groupBox_seek_line.Controls.Add(this.label_seek_list);
-            this.groupBox_seek_line.Controls.Add(this.textBox_seek_list);
             this.groupBox_seek_line.Location = new System.Drawing.Point(12, 12);
             this.groupBox_seek_line.Name = "groupBox_seek_line";
             this.groupBox_seek_line.Size = new System.Drawing.Size(289, 87);
@@ -560,7 +460,7 @@
             // textBox_seek_coincidence
             // 
             this.textBox_seek_coincidence.Enabled = false;
-            this.textBox_seek_coincidence.Location = new System.Drawing.Point(236, 52);
+            this.textBox_seek_coincidence.Location = new System.Drawing.Point(235, 34);
             this.textBox_seek_coincidence.Name = "textBox_seek_coincidence";
             this.textBox_seek_coincidence.Size = new System.Drawing.Size(46, 22);
             this.textBox_seek_coincidence.TabIndex = 9;
@@ -569,29 +469,31 @@
             // 
             this.label_seek_coincidence.AutoSize = true;
             this.label_seek_coincidence.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_seek_coincidence.Location = new System.Drawing.Point(6, 52);
+            this.label_seek_coincidence.Location = new System.Drawing.Point(2, 34);
             this.label_seek_coincidence.Name = "label_seek_coincidence";
             this.label_seek_coincidence.Size = new System.Drawing.Size(118, 20);
             this.label_seek_coincidence.TabIndex = 8;
             this.label_seek_coincidence.Text = "Совпадений:";
             // 
-            // label_seek_list
+            // groupBox_seek_size
             // 
-            this.label_seek_list.AutoSize = true;
-            this.label_seek_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_seek_list.Location = new System.Drawing.Point(6, 18);
-            this.label_seek_list.Name = "label_seek_list";
-            this.label_seek_list.Size = new System.Drawing.Size(214, 20);
-            this.label_seek_list.TabIndex = 7;
-            this.label_seek_list.Text = "Всего позиций в списке:";
+            this.groupBox_seek_size.Controls.Add(this.maskedTextBox_seek_size);
+            this.groupBox_seek_size.Location = new System.Drawing.Point(206, 304);
+            this.groupBox_seek_size.Name = "groupBox_seek_size";
+            this.groupBox_seek_size.Size = new System.Drawing.Size(201, 78);
+            this.groupBox_seek_size.TabIndex = 17;
+            this.groupBox_seek_size.TabStop = false;
+            this.groupBox_seek_size.Text = "Вместимость";
             // 
-            // textBox_seek_list
+            // groupBox_seek_square
             // 
-            this.textBox_seek_list.Enabled = false;
-            this.textBox_seek_list.Location = new System.Drawing.Point(236, 18);
-            this.textBox_seek_list.Name = "textBox_seek_list";
-            this.textBox_seek_list.Size = new System.Drawing.Size(46, 22);
-            this.textBox_seek_list.TabIndex = 0;
+            this.groupBox_seek_square.Controls.Add(this.maskedTextBox_seek_square);
+            this.groupBox_seek_square.Location = new System.Drawing.Point(12, 304);
+            this.groupBox_seek_square.Name = "groupBox_seek_square";
+            this.groupBox_seek_square.Size = new System.Drawing.Size(177, 78);
+            this.groupBox_seek_square.TabIndex = 16;
+            this.groupBox_seek_square.TabStop = false;
+            this.groupBox_seek_square.Text = "Площадь";
             // 
             // SeekForm
             // 
@@ -612,12 +514,6 @@
             this.Activated += new System.EventHandler(this.SeekForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SeekForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seek)).EndInit();
-            this.groupBox_seek_size.ResumeLayout(false);
-            this.groupBox_seek_size.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_seek_size)).EndInit();
-            this.groupBox_seek_square.ResumeLayout(false);
-            this.groupBox_seek_square.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar_seek_square)).EndInit();
             this.groupBox_seek_exact.ResumeLayout(false);
             this.groupBox_seek_exact.PerformLayout();
             this.panel_seek_type.ResumeLayout(false);
@@ -628,6 +524,10 @@
             this.groupBox_seek_choice.PerformLayout();
             this.groupBox_seek_line.ResumeLayout(false);
             this.groupBox_seek_line.PerformLayout();
+            this.groupBox_seek_size.ResumeLayout(false);
+            this.groupBox_seek_size.PerformLayout();
+            this.groupBox_seek_square.ResumeLayout(false);
+            this.groupBox_seek_square.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,15 +539,7 @@
         private System.Windows.Forms.Button button_seek_exit;
         private System.Windows.Forms.TextBox textBox_seek_error;
         private System.Windows.Forms.DataGridView dataGridView_seek;
-        private System.Windows.Forms.GroupBox groupBox_seek_size;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_seek_size;
-        private System.Windows.Forms.Label label_size_more;
-        private System.Windows.Forms.Label label_size_less;
-        private System.Windows.Forms.TrackBar trackBar_seek_size;
-        private System.Windows.Forms.GroupBox groupBox_seek_square;
-        private System.Windows.Forms.Label label_square_more;
-        private System.Windows.Forms.Label label_square_less;
-        private System.Windows.Forms.TrackBar trackBar_seek_square;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_seek_square;
         private System.Windows.Forms.GroupBox groupBox_seek_exact;
         private System.Windows.Forms.Panel panel_seek_type;
@@ -672,8 +564,6 @@
         private System.Windows.Forms.GroupBox groupBox_seek_line;
         private System.Windows.Forms.TextBox textBox_seek_coincidence;
         private System.Windows.Forms.Label label_seek_coincidence;
-        private System.Windows.Forms.Label label_seek_list;
-        private System.Windows.Forms.TextBox textBox_seek_list;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_corpus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_cabinet;
@@ -681,5 +571,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_size;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column_board;
+        private System.Windows.Forms.GroupBox groupBox_seek_size;
+        private System.Windows.Forms.GroupBox groupBox_seek_square;
     }
 }

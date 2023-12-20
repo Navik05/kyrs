@@ -35,8 +35,6 @@
             this.groupBox_edit_line = new System.Windows.Forms.GroupBox();
             this.maskedTextBox_edit_line = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label_edit_list = new System.Windows.Forms.Label();
-            this.textBox_edit_list = new System.Windows.Forms.TextBox();
             this.groupBox_edit_data = new System.Windows.Forms.GroupBox();
             this.panel_edit_board = new System.Windows.Forms.Panel();
             this.label_edit_board = new System.Windows.Forms.Label();
@@ -115,8 +113,6 @@
             // 
             this.groupBox_edit_line.Controls.Add(this.maskedTextBox_edit_line);
             this.groupBox_edit_line.Controls.Add(this.label1);
-            this.groupBox_edit_line.Controls.Add(this.label_edit_list);
-            this.groupBox_edit_line.Controls.Add(this.textBox_edit_list);
             this.groupBox_edit_line.Location = new System.Drawing.Point(283, 4);
             this.groupBox_edit_line.Name = "groupBox_edit_line";
             this.groupBox_edit_line.Size = new System.Drawing.Size(284, 136);
@@ -125,7 +121,7 @@
             // 
             // maskedTextBox_edit_line
             // 
-            this.maskedTextBox_edit_line.Location = new System.Drawing.Point(232, 89);
+            this.maskedTextBox_edit_line.Location = new System.Drawing.Point(232, 65);
             this.maskedTextBox_edit_line.Mask = "00";
             this.maskedTextBox_edit_line.Name = "maskedTextBox_edit_line";
             this.maskedTextBox_edit_line.Size = new System.Drawing.Size(46, 22);
@@ -136,29 +132,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(6, 91);
+            this.label1.Location = new System.Drawing.Point(6, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Выбранная строка:";
-            // 
-            // label_edit_list
-            // 
-            this.label_edit_list.AutoSize = true;
-            this.label_edit_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_edit_list.Location = new System.Drawing.Point(6, 31);
-            this.label_edit_list.Name = "label_edit_list";
-            this.label_edit_list.Size = new System.Drawing.Size(214, 20);
-            this.label_edit_list.TabIndex = 7;
-            this.label_edit_list.Text = "Всего позиций в списке:";
-            // 
-            // textBox_edit_list
-            // 
-            this.textBox_edit_list.Enabled = false;
-            this.textBox_edit_list.Location = new System.Drawing.Point(232, 33);
-            this.textBox_edit_list.Name = "textBox_edit_list";
-            this.textBox_edit_list.Size = new System.Drawing.Size(46, 22);
-            this.textBox_edit_list.TabIndex = 0;
             // 
             // groupBox_edit_data
             // 
@@ -436,8 +414,6 @@
         private System.Windows.Forms.GroupBox groupBox_edit_line;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_edit_line;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label_edit_list;
-        private System.Windows.Forms.TextBox textBox_edit_list;
         private System.Windows.Forms.GroupBox groupBox_edit_data;
         private System.Windows.Forms.Panel panel_edit_board;
         private System.Windows.Forms.Label label_edit_board;

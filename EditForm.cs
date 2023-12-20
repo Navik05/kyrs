@@ -158,6 +158,10 @@ namespace kyrs
                     if (command2.ExecuteNonQuery() == 1)
                     {
                         textBox_edit_error.Text = "Строка успешно удалена";
+                        comboBox_edit_corpus.SelectedIndex = -1;
+                        maskedTextBox_edit_cabinet.Text = "";
+                        maskedTextBox_edit_square.Text = "";
+                        maskedTextBox_edit_size.Text = "";
                         maskedTextBox_edit_line.Text = "";
                     }
                     else
