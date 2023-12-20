@@ -47,6 +47,7 @@ namespace kyrs
             MySqlCommand command = new MySqlCommand("SELECT * FROM `auditorium` ORDER BY `id`", db.getConnection());
             MySqlDataReader reader = command.ExecuteReader();
 
+            //Вывод списка
             for (int i = 0; reader.Read(); i++)
             {
                 if (dataGridView_spisok.Rows.Count <= i)

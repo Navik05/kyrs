@@ -73,6 +73,7 @@
             this.button_edit_show.TabIndex = 13;
             this.button_edit_show.Text = "Просмотр";
             this.button_edit_show.UseVisualStyleBackColor = true;
+            this.button_edit_show.Click += new System.EventHandler(this.button_edit_show_Click);
             // 
             // textBox_edit_error
             // 
