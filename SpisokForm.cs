@@ -53,7 +53,7 @@ namespace kyrs
             DB db = new DB();
             db.openConnection();
 
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `auditorium` ORDER BY `id`", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `spisok` ORDER BY `id`", db.getConnection());
             MySqlDataReader reader = command.ExecuteReader();
 
             //Вывод списка
@@ -70,6 +70,11 @@ namespace kyrs
             }
             reader.Close();
             db.closeConnection();   
+        }
+
+        private void SpisokForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

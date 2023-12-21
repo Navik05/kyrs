@@ -105,7 +105,7 @@ namespace kyrs
                     if (inDateEmpty() == true)
                         return;
                     //Проверка на совпадения строки
-                    if (isAuditoriumExists() == true)
+                    if (isspisokExists() == true)
                         return;
 
                     //Занесение данных в бд 
@@ -115,7 +115,7 @@ namespace kyrs
                     if (radioButton_edit_mel.Checked == true) board = 1;
                     else board = 2;
 
-                    MySqlCommand command1 = new MySqlCommand("INSERT INTO `auditorium` (`corpus`, `cabinet`, `square`, `size`, `type`, `board`) VALUES (@corpus, @cabinet, @square, @size, @type, @board)", db.getConnection());
+                    MySqlCommand command1 = new MySqlCommand("INSERT INTO `spisok` (`corpus`, `cabinet`, `square`, `size`, `type`, `board`) VALUES (@corpus, @cabinet, @square, @size, @type, @board)", db.getConnection());
                     command1.Parameters.Add("@corpus", MySqlDbType.VarChar).Value = comboBox_edit_corpus.Text;
                     command1.Parameters.Add("@cabinet", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_cabinet.Text);
                     command1.Parameters.Add("@square", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_square.Text);
@@ -150,7 +150,7 @@ namespace kyrs
                         return;
                     }
 
-                    MySqlCommand command2 = new MySqlCommand("DELETE FROM `auditorium` WHERE `auditorium`.`id` = @id", db.getConnection());
+                    MySqlCommand command2 = new MySqlCommand("DELETE FROM `spisok` WHERE `spisok`.`id` = @id", db.getConnection());
                     command2.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_line.Text);
 
                     db.openConnection();
@@ -192,7 +192,7 @@ namespace kyrs
                     if (radioButton_edit_mel.Checked == true) board = 1;
                     else board = 2;
 
-                    MySqlCommand command3 = new MySqlCommand("UPDATE `auditorium` SET `corpus` = @corpus, `cabinet` = @cabinet, `square` = @square, `size` = @size, `type` = @type, `board` = @board WHERE `auditorium`.`id` = @id", db.getConnection());
+                    MySqlCommand command3 = new MySqlCommand("UPDATE `spisok` SET `corpus` = @corpus, `cabinet` = @cabinet, `square` = @square, `size` = @size, `type` = @type, `board` = @board WHERE `spisok`.`id` = @id", db.getConnection());
                     command3.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_line.Text);
                     command3.Parameters.Add("@corpus", MySqlDbType.VarChar).Value = comboBox_edit_corpus.Text;
                     command3.Parameters.Add("@cabinet", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_cabinet.Text);
@@ -236,7 +236,7 @@ namespace kyrs
             }
 
             DB db = new DB();
-            MySqlCommand command4 = new MySqlCommand("SELECT * FROM `auditorium` WHERE `id` = @id ORDER BY `id`", db.getConnection());
+            MySqlCommand command4 = new MySqlCommand("SELECT * FROM `spisok` WHERE `id` = @id ORDER BY `id`", db.getConnection());
             command4.Parameters.Add("@id", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_line.Text);
 
             db.openConnection();
@@ -294,7 +294,7 @@ namespace kyrs
         }
 
         //Проверка на совпадения строки
-        public Boolean isAuditoriumExists()
+        public Boolean isspisokExists()
         {
             Int32 type, board;
             if (radioButton_edit_mul.Checked == true) type = 1;
@@ -306,7 +306,7 @@ namespace kyrs
             DB db = new DB();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `auditorium` WHERE `corpus` = @corpus AND `cabinet` = @cabinet AND `square` = @square AND `size` = @size AND `type` = @type AND `board` = @board", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `spisok` WHERE `corpus` = @corpus AND `cabinet` = @cabinet AND `square` = @square AND `size` = @size AND `type` = @type AND `board` = @board", db.getConnection());
             command.Parameters.Add("@corpus",MySqlDbType.VarChar).Value = comboBox_edit_corpus.Text;
             command.Parameters.Add("@cabinet", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_cabinet.Text);
             command.Parameters.Add("@square", MySqlDbType.Int32).Value = Convert.ToInt32(maskedTextBox_edit_square.Text);

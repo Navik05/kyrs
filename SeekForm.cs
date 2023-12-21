@@ -124,7 +124,7 @@ namespace kyrs
             DB db = new DB();
 
             //Прототит универсального запроса
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `auditorium` " +
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `spisok` " +
             "WHERE (`corpus` LIKE @corpus OR @corpus IS NULL)" +
             "AND (`cabinet` = @cabinet OR @cabinet IS NULL) " +
             "AND (`square` = @square OR @square IS NULL)" +

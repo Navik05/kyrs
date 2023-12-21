@@ -157,6 +157,7 @@
             this.Text = "Аудиторный фонд";
             this.Activated += new System.EventHandler(this.SpisokForm_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SpisokForm_FormClosed);
+            this.Load += new System.EventHandler(this.SpisokForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_spisok)).EndInit();
             this.menuStrip_spisok.ResumeLayout(false);
             this.menuStrip_spisok.PerformLayout();
